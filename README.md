@@ -26,7 +26,7 @@ Human approval or exception review
 Payment-ready status
 ```
 
-LedgerFlow never initiates a payment. `PAYMENT_READY` only indicates that the configured validation and human-approval requirements have been satisfied.
+LedgerFlow never initiates the payment. `PAYMENT_READY` only indicates that the configured validation and human-approval requirements have been satisfied.
 
 ## Core capabilities
 
