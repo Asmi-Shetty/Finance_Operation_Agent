@@ -270,7 +270,7 @@ These services are independently testable and never call an LLM.
 - Invalid or out-of-sequence state transitions are rejected.
 - Rejection and clarification actions require reviewer comments.
 - The architecture is ready for external authentication and role-based authorization.
-- The application cannot automatically initiate a payment.
+- The application cant automatically initiate a payment.
 
 ## Current implementation status
 
@@ -287,7 +287,7 @@ These services are independently testable and never call an LLM.
 | Full database-backed workflow execution | In progress |
 | pgvector policy ingestion and retrieval | Planned |
 | Enterprise SSO and complete RBAC enforcement | Planned |
-| ERP integration and payment export | Out of MVP scope |
+| ERP integration and payment export | Out of the MVP scope |
 
 ## Roadmap
 
