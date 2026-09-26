@@ -28,7 +28,7 @@ Payment-ready status
 
 LedgerFlow never initiates the payment. `PAYMENT_READY` only indicates that the configured validation and human-approval requirements have been satisfied.
 
-## Core capabilities
+## Core capabilities 
 
 - Upload PDF, PNG, JPG, and JPEG invoices with file-signature and size validation.
 - Persist invoices, vendors, purchase orders, documents, approvals, workflow runs, and audit events.
@@ -42,7 +42,7 @@ LedgerFlow never initiates the payment. `PAYMENT_READY` only indicates that the 
 - Record approval, rejection, and clarification decisions in the audit history.
 - Display invoice and risk metrics in a responsive finance dashboard.
 
-## Engineering principles
+## Engineering principles to follow
 
 The following constraints are treated as system invariants:
 
