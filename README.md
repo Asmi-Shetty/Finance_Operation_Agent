@@ -6,7 +6,7 @@ This project is intentionally **not a finance chatbot**. AI components help inte
 
 ## What the system does
 
-```text
+`text
 Invoice upload
     ↓
 Document extraction
