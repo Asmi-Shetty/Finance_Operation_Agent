@@ -40,7 +40,7 @@ LedgerFlow never initiates the payment. `PAYMENT_READY` only indicates that the 
 - Calculate explainable anomaly scores using transparent rules.
 - Route invoices to the appropriate human approval level.
 - Record approval, rejection, and clarification decisions in the audit history.
-- Display invoice and risk metrics in a responsive finance dashboard.
+- Display invoice and risk metrics in the responsive finance dashboard.
 
 ## Engineering principles to follow
 
