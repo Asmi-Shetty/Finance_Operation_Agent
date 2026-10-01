@@ -44,7 +44,7 @@ LedgerFlow never initiates the payment. `PAYMENT_READY` only indicates that the 
 
 ## Engineering principles to follow
 
-The following constraints are treated as system invariants:
+The following constraints are treated as the system invariants:
 
 1. The LLM never performs financial arithmetic.
 2. The LLM cannot invent or override finance policies.
