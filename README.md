@@ -104,7 +104,7 @@ flowchart TB
     Orchestrator --> Redis[(Redis)]
     Orchestrator --> Audit[Audit Service]
     Audit --> Database
-    Extractor -. configurable .-> LLM[OpenAI-compatible LLM]
+    Extractor -. configurable ---> LLM[OpenAI-compatible LLM]
 ```
 
 The LLM boundary is deliberately narrow. It may produce schema-constrained extraction candidates or summarize retrieved policy evidence. The validation layer verifies those outputs before they affect the workflow.
