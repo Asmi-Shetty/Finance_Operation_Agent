@@ -8,6 +8,6 @@ uploads/
 backend/uploads/
 frontend/node_modules/
 frontend/dist/
+*.tsbuildinfo
 .idea/
 .vscode/settings.json
-
