@@ -229,6 +229,9 @@ header p:not(.eyebrow) { margin: 7px 0 0; color: #68756f; }
 }
 .command-bar::before { content: ''; position: absolute; width: 240px; height: 240px; right: 8%; top: -170px; border-radius: 50%; border: 34px solid #bce46110; animation: radar-ring 6s linear infinite; }
 .command-bar::after { content: ''; position: absolute; inset: 0; opacity: .12; background: repeating-linear-gradient(90deg, transparent 0 32px, #fff 33px, transparent 34px); mask-image: linear-gradient(90deg, transparent, #000, transparent); animation: scan 8s linear infinite; }
+.command-bar.offline { background: linear-gradient(110deg,#4b3517,#725326 58%,#5d421c); border-color: #8f6b35; }
+.command-bar.offline .status-orb { color: #ffe09a; }
+.command-bar.offline .live-dot,.command-bar.offline .signal i { background: #f2bd55; box-shadow: 0 0 7px #f2bd5566; }
 .command-status { display: flex; align-items: center; gap: 13px; position: relative; z-index: 1; }
 .status-orb { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; color: #ddfa78; background: #ffffff12; border: 1px solid #ffffff20; box-shadow: 0 0 0 6px #ffffff08; animation: orb-breathe 2.8s ease-in-out infinite; }
 .command-status p { display: flex; align-items: center; gap: 7px; margin: 0 0 3px; color: #a9c6b9; font-size: 9px; font-weight: 700; letter-spacing: .16em; }

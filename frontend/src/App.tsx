@@ -10,13 +10,14 @@ type View='overview'|'invoices'|'review'
 
 export function App(){
  const [dashboard,setDashboard]=useState(empty),[invoices,setInvoices]=useState<Invoice[]>([]),[busy,setBusy]=useState(false),[error,setError]=useState('')
+ const [offline,setOffline]=useState(false)
  const [now,setNow]=useState(()=>new Date())
  const [view,setView]=useState<View>('overview')
  const [theme,setTheme]=useState<'light'|'dark'>(()=>{
   const saved=localStorage.getItem('ledgerflow-theme')
   return saved==='light'||saved==='dark'?saved:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'
  })
- const load=async()=>{try{const [d,list]=await Promise.all([api.dashboard(),api.invoices()]);setDashboard(d);setInvoices(list.items)}catch(e){setError(e instanceof Error?e.message:'Unable to load data')}}
+ const load=async()=>{try{const [d,list]=await Promise.all([api.dashboard(),api.invoices()]);setDashboard(d);setInvoices(list.items);setOffline(api.isOffline());setError('')}catch(e){setError(e instanceof Error?e.message:'Unable to load data')}}
  useEffect(()=>{void load()},[])
  useEffect(()=>{document.documentElement.dataset.theme=theme;localStorage.setItem('ledgerflow-theme',theme)},[theme])
  useEffect(()=>{const timer=window.setInterval(()=>setNow(new Date()),1000);return()=>window.clearInterval(timer)},[])
@@ -38,8 +39,8 @@ export function App(){
   <main key={view}><header><div className="hero-copy"><p className="eyebrow"><span className="live-dot"/>ACCOUNTS PAYABLE</p><h1>{viewCopy[view][0]}</h1><p>{viewCopy[view][1]}</p></div><div className="header-actions"><button className="theme-toggle" type="button" onClick={()=>setTheme(current=>current==='light'?'dark':'light')} aria-label={`Switch to ${theme==='light'?'dark':'light'} theme`} title={`Switch to ${theme==='light'?'dark':'light'} theme`}><span className="toggle-track"><Sun size={15}/><Moon size={15}/><i className="toggle-thumb"/></span></button><label className={`upload ${busy?'disabled':''}`}><span className="upload-glow"/><UploadCloud size={18}/>{busy?'Uploading…':'Upload invoice'}<input type="file" accept=".pdf,.png,.jpg,.jpeg" disabled={busy} onChange={e=>void upload(e.target.files?.[0])}/></label></div></header>
   {error&&<div className="error">{error}</div>}
   {view==='overview'&&<>
-  <section className="command-bar">
-   <div className="command-status"><span className="status-orb"><Activity size={18}/></span><div><p><span className="live-dot"/>SYSTEM LIVE</p><strong>Invoice operations are running normally</strong><small>Deterministic controls active · Human approval enforced</small></div></div>
+  <section className={`command-bar ${offline?'offline':''}`}>
+   <div className="command-status"><span className="status-orb"><Activity size={18}/></span><div><p><span className="live-dot"/>{offline?'LOCAL DEMO MODE':'SYSTEM LIVE'}</p><strong>{offline?'Interface ready · backend is offline':'Invoice operations are running normally'}</strong><small>{offline?'Uploads are stored in this browser until the API starts.':'Deterministic controls active · Human approval enforced'}</small></div></div>
    <div className="live-time"><span>{now.toLocaleDateString('en-IN',{weekday:'short',day:'2-digit',month:'short'})}</span><strong>{now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit'})}</strong></div>
    <div className="signal" aria-label="System health"><i/><i/><i/><i/></div>
   </section>
