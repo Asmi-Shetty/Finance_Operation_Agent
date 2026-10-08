@@ -304,6 +304,6 @@ These services are independently testable and never call an LLM.
 - [`docs/architecture.md`](docs/architecture.md) — system design and workflow boundaries
 - [`docs/api.md`](docs/api.md) — endpoint summary and API behavior
 
-## License
+## License --
 
 No open-source license has been selected. Unless a license is added, all rights are reserved by the repository owner.
