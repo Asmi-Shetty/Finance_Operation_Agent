@@ -289,7 +289,7 @@ These services are independently testable and never call an LLM.
 | Enterprise SSO and complete RBAC enforcement | Planned |
 | ERP integration and payment export | Out of the MVP scope |
 
-## Roadmap
+## Roadmap ---
 
 1. Connect document extraction and validation to persisted workflow runs.
 2. Add policy ingestion, chunking, embeddings, and pgvector retrieval.
