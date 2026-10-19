@@ -6,7 +6,9 @@ This project is intentionally **not a finance chatbot**. AI components help inte
 
 ## What the system does
 
-`text
+text
+
+
 Invoice upload
     ↓
 Document extraction
@@ -287,9 +289,9 @@ These services are independently testable and never call an LLM.
 | Full database-backed workflow execution | In progress |
 | pgvector policy ingestion and retrieval | Planned |
 | Enterprise SSO and complete RBAC enforcement | Planned |
-| ERP integration and payment export | Out of the MVP scope |
+| ERP integration and the payment export | Out of the MVP scope |
 
-## Roadmap --
+## Roadmap 
 
 1. Connect document extraction and validation to persisted workflow runs.
 2. Add policy ingestion, chunking, embeddings, and pgvector retrieval.
